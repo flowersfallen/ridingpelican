@@ -1,0 +1,8 @@
+node_modules
+dist
+.DS_Store
+*.local
+scripts/raw-samples.json
+scripts/extra-samples.json
+scripts/more-samples.json
+scripts/grid-samples.json

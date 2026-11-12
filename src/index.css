@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Subtle drafting-paper coordinate grid for SVG showcase stages */
+.drafting-grid {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(to right, rgba(24, 24, 27, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 24, 27, 0.045) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.drafting-grid-dark {
+  background-color: #141417;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-track-inner {
+  min-width: calc(var(--tick-count, 1) * 74px);
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .timeline-track-inner {
+    min-width: 0;
+  }
+}
+
+/* Transparent range overlay aligned to the custom unified progress rail */
+input[type='range'].timeline-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='range'].timeline-slider::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+input[type='range'].timeline-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+}
+
+input[type='range'].timeline-slider::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+input[type='range'].timeline-slider::-moz-range-thumb {
+  width: 20px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  cursor: grab;
+}
+
+input[type='range'].timeline-slider:active::-webkit-slider-thumb,
+input[type='range'].timeline-slider:active::-moz-range-thumb {
+  cursor: grabbing;
+}
